@@ -1,0 +1,17 @@
+# Generated analysis output (decrypted images, Ghidra projects, scratch)
+*/work/
+*.gpr
+*.rep/
+*.lock
+*.lock~
+__pycache__/
+*.pyc
+.venv/
+
+# Vendor firmware is not distributed: use your own copy, anywhere outside the repo or here.
+*.BIN
+*.bin
+*.FIR
+*.fir
+Firmware v*/
+firmware v*/
