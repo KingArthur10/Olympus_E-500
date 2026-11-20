@@ -3,7 +3,7 @@
 This folder turns **your own copy** of the official Olympus E-500 firmware 1.3 into a modified firmware file with
 long, ascending AE bracket presets (13 to 37 frames at 1/3 EV) in the AE BKT menu. It also skips frames the camera
 can't expose and keeps shooting past a full buffer while the shutter is held. What changes, the menu and the
-presets are described in the [top-level README](../README.md#olympus-e-500).
+presets are described in the [top-level README](../README.md#the-modified-firmware).
 
 The firmware file itself is **not** included. The scripts check your file by SHA-256 and refuse anything else.
 

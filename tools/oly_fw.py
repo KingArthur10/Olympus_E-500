@@ -4,7 +4,7 @@
 Currently understands the "OE" container seen in E-500 fw 1.3 (E0359999.BIN):
 0x20-byte header, payload, 0x20-byte trailer that repeats header[0:0x1C] and
 ends in a checksum u32. Field meanings are documented, with their confidence,
-in each camera's CLAUDE.md.
+in the working notes.
 
 Checksum: the trailer's last u32 makes the little-endian u32 sum of
 header + DECODED payload + trailer equal 0 (firmware routine 0x40124F0B).

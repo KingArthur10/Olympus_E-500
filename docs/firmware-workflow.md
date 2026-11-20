@@ -1,10 +1,10 @@
-# Firmware workflow (all cameras)
+# Firmware workflow
 
-1. **Ingest.** Copy the vendor file into `<Camera>/Firmware vX.Y/` and never edit it. Record
-   its SHA-256, size and source URL in the camera's CLAUDE.md.
+1. **Ingest.** Copy the vendor file into `Olympus E-500/Firmware vX.Y/` and never edit it. Record
+   its SHA-256, size and source URL in the working notes.
 2. **Container.** Run `python3 tools/oly_fw.py info <file>` to get the header and trailer fields.
-   Document the fields in the camera's CLAUDE.md, marking each [confirmed]/[hypothesis].
-3. **Deobfuscate/decrypt** to `<Camera>/work/<ver>/decoded.bin`. Validate by finding plaintext
+   Document the fields in the working notes, marking each [confirmed]/[hypothesis].
+3. **Deobfuscate/decrypt** to `Olympus E-500/work/<ver>/decoded.bin`. Validate by finding plaintext
    strings (menu text, "OLYMPUS", copyright) and sane code statistics.
 4. **Split** sections (bootloader / main / DSP / resources) if the decoded image has an internal
    table. Note load addresses.
@@ -14,4 +14,4 @@
 6. **Analyze in Ghidra** (see `decompilation.md`).
 7. **Locate the feature** via strings, UI tables, numeric constants and xrefs.
 8. **Patch** → `patches/` definition → apply → re-encode → verify (see `safety.md`).
-9. **Log** each step as `notes/YYYY-MM-DD-topic.md`. Update the findings index in CLAUDE.md.
+9. **Log** each step as `notes/YYYY-MM-DD-topic.md`. Update the findings index in the working notes.

@@ -1,6 +1,6 @@
 # Flashing safety
 
-None of these bodies has a known recovery path (no public bootloader/JTAG unbrick procedure).
+The E-500 has no known recovery path (no public bootloader/JTAG unbrick procedure).
 A bad flash may permanently brick the camera.
 
 **If you are building a firmware from this repository for your own camera:** use only the official firmware file

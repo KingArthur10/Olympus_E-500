@@ -1,21 +1,15 @@
-# Camera Hacks
+# Olympus E-500 Firmware Mods
 
-Firmware research and modifications for my Olympus cameras. The main goal is long, ascending AE brackets for HDR,
-shot in the camera, in the field, by holding the shutter button. There is no tethering or host-side control.
+Firmware research and modifications for the Olympus E-500 (2005; Four Thirds DSLR, Kodak 8 MP CCD, Panasonic
+MN10300 CPU). The main goal is long, ascending AE brackets for HDR, shot in the camera, in the field, by holding the
+shutter button. There is no tethering or host-side control.
 
-| Camera | Platform | Status |
-|---|---|---|
-| [Olympus E-500](#olympus-e-500) (2005) | Four Thirds DSLR, Kodak 8 MP CCD, Panasonic MN10300 CPU | **Active.** Modified firmware (ext_bkt r5) on the camera and working |
-| [Olympus E-510](#olympus-e-510) (2007) | Four Thirds DSLR, Live MOS, TruePic III | Firmware file added, not analyzed |
-| [Olympus OM-D E-M1](#olympus-om-d-e-m1-mark-i) (2013) | Micro Four Thirds, TruePic VII | Placeholder, no firmware yet |
-| [Olympus OM-D E-M1 Mark III](#olympus-om-d-e-m1-mark-iii) (2020) | Micro Four Thirds, TruePic IX | Placeholder, no firmware yet |
-
-**Before flashing anything, read [`docs/safety.md`](docs/safety.md).** No recovery path is known for any of these
-bodies, and a bad flash may brick the camera.
+**Before flashing anything, read [`docs/safety.md`](docs/safety.md).** No recovery path is known for the E-500, and
+a bad flash may brick the camera.
 
 ---
 
-## Olympus E-500
+## The modified firmware
 
 **On the camera:** `ext_bkt r5`, flashed 2026-11-19. It was built from the official firmware 1.3
 (`E0359999.BIN`). Output SHA-256: `f03a644c5fa8cb497071c0638de469900a646766b47d84f45e016f17b2e85cc3`.
@@ -145,25 +139,6 @@ and is not covered by it.
 
 ---
 
-## Olympus E-510
-**Status: stub.** The official firmware 1.3 (`E0419999.BIN`) is in the author's working copy but hasn't been
-analyzed. Its container differs from the E-500's: `tools/oly_fw.py info` rejects it. It is the E-500's
-successor, so the same CPU is possible but unverified. The expected next step is porting the E-500 bracket, finding
-the same functions by signature (never by E-500 offsets). Out of scope for now.
-
-
-## Olympus OM-D E-M1 (Mark I)
-**Status: placeholder.** No firmware in the repo yet. It is a completely different platform (TruePic VII), so
-nothing from the E-500 carries over. Goal, if ported: the same in-camera ascending bracket.
-
-
-## Olympus OM-D E-M1 Mark III
-**Status: placeholder.** No firmware in the repo yet. It is a modern platform (TruePic IX) whose firmware is likely
-signed or encrypted. Stock bracketing already goes further than the E-500's. Goal, if ported: the same in-camera
-ascending bracket. 
-
----
-
 ## Repository layout and tools
 ```
 docs/          shared methodology: firmware workflow, flashing safety, decompilation conventions, references
@@ -174,8 +149,8 @@ tools/         Python tools (stdlib only)
   mn103_sim.py      MN10300 simulator for differential tests of patch code
   mn103_calls.py, xref.py, mn103_forms.py   call sites, references, instruction-form checks
   export_public.py  copy the repo for public release, without vendor firmware
-<Camera>/
-  make_firmware.py  one-step build from your own firmware file (E-500)
+Olympus E-500/
+  make_firmware.py  one-step build from your own firmware file
   Firmware vX.Y/    official vendor files: in the author's private working copy only, never distributed
   notes/            dated research findings (author's working copy only)
   patches/          patch definitions (the source of truth for every modification)

@@ -2,6 +2,8 @@
 
 - DPReview, "Hacking the Olympus E500" (old thread, general approach only):
   https://www.dpreview.com/forums/threads/hacking-the-olympus-e500.2168790/
+
+## Other Olympus bodies (background only)
 - LightSnow Dev, OM-D E-M10 firmware hack (says the method is common to the OM-D trio; E-M1 internal ID 1090):
   http://lightsnowdev.blogspot.com/2014/07/olympus-om-d-e-m10-firmware-hack.html
 - "How to start your own hacks" (Olympus OM-D; mentions the E-M5 CPU as MN103):
